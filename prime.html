@@ -1,0 +1,38 @@
+
+<!DOCTYPE html>
+<html>
+<body>
+<input type="text" id="no" />
+    <input type="submit" value="check" id="get"/>
+<script>
+    const prime = no => {
+        let count =0;
+        if(no == 1 || no == 0)
+            return "It is neither prime nor composite";
+        if(no > 1)
+        {
+            for (let i = 2; i <= Math.sqrt(no) ; ++i)
+            {
+                if(no % i == 0)
+                {
+                    count = 1;
+                }
+            }
+            if(count == 0)
+                return "prime";
+            else
+                return "Not a prime no";
+         }
+         else
+            return "Negative Numbers cannot be prime";
+    }
+        
+    document.getElementById("get").addEventListener("click", function(){
+        var no = document.getElementById('no').value;
+    console.log(prime(no));
+    });
+</script>
+    </body>
+</html>
+
+
